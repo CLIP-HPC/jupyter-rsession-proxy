@@ -52,7 +52,7 @@ def get_system_user():
 
 def setup_rserver():
     def _get_env(port):
-        return dict(USER=get_system_user(), R_LIBS_SITE=os.environ.get("R_LIBS_SITE",None))
+        return dict(USER=get_system_user(), R_LIBS_SITE='/tmp')
 
     def db_config(db_dir):
         '''
@@ -141,7 +141,7 @@ def setup_rsession():
             'R_SHARE_DIR': R_SHARE_DIR,
             'RSTUDIO_DEFAULT_R_VERSION_HOME': R_HOME,
             'RSTUDIO_DEFAULT_R_VERSION': version,
-            'R_LIBS_SITE': os.environ.get('R_LIBS_SITE', None),
+            'R_LIBS_SITE': '/tmp'),
         }
 
     def _get_cmd(port):
