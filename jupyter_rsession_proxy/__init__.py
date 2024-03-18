@@ -52,7 +52,7 @@ def get_system_user():
 
 def setup_rserver():
     def _get_env(port):
-        return dict(USER=get_system_user(), R_LIBS_SITE='/tmp')
+        return dict(USER=get_system_user())
 
     def db_config(db_dir):
         '''
@@ -146,6 +146,7 @@ def setup_rsession():
 
     def _get_cmd(port):
         return [
+            'export R_LIBS_SITE=/tmp &&',
             get_rstudio_executable('rsession'),
             '--standalone=1',
             '--program-mode=server',
