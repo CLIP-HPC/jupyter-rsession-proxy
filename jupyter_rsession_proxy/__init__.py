@@ -52,7 +52,7 @@ def get_system_user():
 
 def setup_rserver():
     def _get_env(port):
-        return dict(USER=get_system_user())
+        return dict(USER=get_system_user(), R_LIBS_SITE=os.environ.get("R_LIBS_SITE",None))
 
     def db_config(db_dir):
         '''
