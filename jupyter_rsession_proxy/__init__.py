@@ -141,7 +141,7 @@ def setup_rsession():
             'R_SHARE_DIR': R_SHARE_DIR,
             'RSTUDIO_DEFAULT_R_VERSION_HOME': R_HOME,
             'RSTUDIO_DEFAULT_R_VERSION': version,
-            'R_SITE_LIB': os.environ.get('R_SITE_LIB', None),
+            'R_LIBS_SITE': os.environ.get('R_LIBS_SITE', None),
         }
 
     def _get_cmd(port):
