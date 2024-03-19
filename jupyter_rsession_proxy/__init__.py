@@ -52,7 +52,7 @@ def get_system_user():
 
 def setup_rserver():
     def _get_env(port):
-        return dict(USER=get_system_user(), R_LIBS_SITE='/tmp')
+        return dict(USER=get_system_user(), R_ENVIRON='/software/system/rstudio/Renviron.site')
 
     def db_config(db_dir):
         '''
